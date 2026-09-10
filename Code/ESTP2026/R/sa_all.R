@@ -1,6 +1,9 @@
+source("R/prophet_seasadj.R")
 
-s <- rjd3toolkit::Retail$RetailSalesTotal
-#s <- rjd3toolkit::ABS$X0.2.05.10.M
+#s <- rjd3toolkit::Retail$BookStores
+#s <- rjd3toolkit::aggregate(rjd3toolkit::Retail$BookStores, 4)
+s <- rjd3toolkit::ABS$X0.2.09.10.M
+#s <- rjd3toolkit::aggregate(rjd3toolkit::ABS$X0.2.09.10.M, 4)
 
 spec<-rjd3x13::x11_spec()
 spec$mode<-"ADDITIVE"
@@ -17,12 +20,12 @@ sa_ts0<-rslt_ts0$final$sa$data
 rslt_ts<-rjd3tramoseats::tramoseats_fast(s)
 sa_ts<-rslt_ts$final$sa$data
 
+rslt_prophet<-prophet_seasadj(s)
+sa_prophet<-rslt_prophet$sa
 
 rslt_camplet<-camplet::camplet(s)
 sa_camplet<-ts(rslt_camplet$data$sa, frequency=frequency(s), start = start(s))
 
+rslt_stl<- stl(s, s.window = 7)
+sa_stl<-s-rslt_stl$time.series[,"seasonal"]
 
-ts.plot(window(ts.union(sa_camplet, sa_x11, sa_x13, sa_ts0, sa_ts), start=2005), type='l', col=c("green", "orange", "red", "blue", "magenta"))
-
-ts.plot(window(ts.union(sa_x11, sa_x13), start=2005), type='l', col=c("orange", "red"))
-ts.plot(window(ts.union(sa_ts0, sa_ts), start=2005), type='l', col=c("blue", "magenta"))
