@@ -1,10 +1,14 @@
 source("R/prophet_seasadj.R")
 source("R/sts_seasadj.R")
 
+#s <- rjd3toolkit::Retail$RetailSalesTotal
+#s <- rjd3toolkit::aggregate(rjd3toolkit::Retail$RetailSalesTotal, 4)
+
 s <- rjd3toolkit::Retail$BookStores
 #s <- rjd3toolkit::aggregate(rjd3toolkit::Retail$BookStores, 4)
 #s <- rjd3toolkit::ABS$X0.2.20.10.M
 #s <- rjd3toolkit::aggregate(rjd3toolkit::ABS$X0.2.09.10.M, 4)
+
 
 spec<-rjd3x13::x11_spec()
 spec$mode<-"ADDITIVE"
