@@ -105,4 +105,9 @@ ucm2<-airline_decomposition(52,.2,-.7)
 twk2<-rjd3toolkit::ucarima_wk(ucm2, 1, T, 1200)
 lines(twk2$gain2, col="blue")
 
-mucm<-airline_decomposition(12,-.8,-.7)
+mucm<-airline_decomposition(12,-.5,-.5)
+sa_wk<-rjd3toolkit::ucarima_wk(mucm, 2, FALSE)
+plot(sa_wk$filter, type='h')
+t_wk<-rjd3toolkit::ucarima_wk(mucm, 1, TRUE)
+plot(t_wk$filter, type='h')
+
