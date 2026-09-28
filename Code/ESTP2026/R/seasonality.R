@@ -2,8 +2,7 @@
 
 s<-rjd3toolkit::Retail$RetailSalesTotal
 ls<-log(s)
-st<-rjd3toolkit::do_stationary(ls, 12)
-dls<-st$ddata
+dls<-rjd3toolkit::differences(ls)
 
 spec.pgram(dls)
 
@@ -15,14 +14,16 @@ print(rjd3toolkit::seasonality_qs(dls, 12))
 # pvalue = prob[x>T]
 # pvalue nearly 0 -> w reject H0
 
-print(rjd3toolkit::seasonality_kruskalwallis(dls, 12))
-
 print(rjd3toolkit::seasonality_friedman(dls, 12))
 
-print(rjd3toolkit::seasonality_f(ls[-1], 12, "D1"))
+print(rjd3toolkit::seasonality_kruskalwallis(dls, 12))
+
+print(rjd3toolkit::seasonality_f(dls, 12, "AR"))
 
 
 # !!!
+
+cat("\nTests on linear trend !!!\n")
 
 print(rjd3toolkit::seasonality_qs(1:120, 12))
 

@@ -2,8 +2,8 @@
 # H0: the coefficients of the trading days are jointly 0 (= no trading days effects)
 # if p-value is small, we reject H0. There are trading days effects
 
-s<-rjd3toolkit::ABS$X0.2.20.10.M
-#s<-rjd3toolkit::retail$RetailSalesTotal
+#s<-rjd3toolkit::ABS$X0.2.20.10.M
+s<-rjd3toolkit::Retail$RetailSalesTotal
 
 td_all<-function(s, title, len=length(s)/12){
   a<-sapply(6:len, function(j){rjd3toolkit::td_f(s, model = "D1", nyears = j)$pvalue})
@@ -47,3 +47,10 @@ td_tests<-function(s, spec="rsafull"){
 td_all<-lapply(rjd3toolkit::Retail, function(z){td_tests(z)})
 notd_all<-lapply(rjd3toolkit::Retail, function(z){td_tests(log(z), "rsa0")})
 
+
+s<-log(rjd3toolkit::ABS$X0.2.41.10.M)
+sa<-rjd3tramoseats::tramoseats_fast(s)$final$sa$data
+tsa<-rjd3toolkit::td_f(log(sa), model = "D1")
+print(tsa)
+print(rjd3toolkit::td_timevarying(log(sa)))
+print(rjd3toolkit::td_timevarying(log(rjd3toolkit::Retail$RetailSalesTotal)))
