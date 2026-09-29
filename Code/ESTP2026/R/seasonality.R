@@ -46,3 +46,8 @@ be_x<-rjd3providers::spreadsheet_data("belgium.xlsx", 2)
 lapply(be_x$series, function(s)rjd3toolkit::seasonality_f(s$data, 12, "D1"))
 be_m<-rjd3providers::spreadsheet_data("belgium.xlsx", 3)
 lapply(be_m$series, function(s)rjd3toolkit::seasonality_f(s$data, 12, "D1"))
+
+
+print(rjd3toolkit::seasonality_combined(dls))
+
+

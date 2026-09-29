@@ -16,6 +16,10 @@ be_cal<-rjd3toolkit::calendar_td(BE, 12, c(2000,1), 60, holiday=7, groups=c(1,1,
             contrasts = FALSE)
 print(be_cal)
 
+be_cal<-rjd3toolkit::calendar_td(BE, 12, c(2000,1), 60, holiday=7, groups=c(1,1,1,2,2,3,0),
+                                 contrasts = TRUE)
+print(be_cal)
+
 #DEF <- rjd3toolkit::national_calendar(list())
 #def_cal<-rjd3toolkit::calendar_td(DEF, 12, c(2000,1), 60, holiday=7, groups=c(1,1,1,2,2,3,0),
 #                                 contrasts = FALSE)
@@ -23,3 +27,10 @@ print(be_cal)
 
 #be_calc<-rjd3toolkit::calendar_td(BE, 12, c(2000,1), 600, holiday=7, groups=c(1,1,1,2,2,3,0),
 #                                 contrasts = TRUE)
+
+print(rjd3toolkit::td(12, c(2000,1), 60, groups=c(1,1,1,2,2,3,0), contrasts = FALSE))
+
+print(rjd3toolkit::td(12, c(2000,1), 60, groups=c(1,1,1,2,2,3,0), contrasts = TRUE))
+
+
+
