@@ -26,7 +26,7 @@ pac<-rjd3toolkit::autocorrelations_partial(ds, T, n=36)
 all<-cbind(ac, pac)
 barplot(t(all), beside = T, col = c("red", "blue"), names.arg = c(1:36), ylim=c(-1,1))
 
-spec<-spec.pgram(ds)
+spec<-spec.pgram(ds, fast=FALSE, demean=TRUE, detrend = FALSE, plot=FALSE, taper = 0)
 plot(spec$spec, type='l')
 
 spec.ar(ds)
