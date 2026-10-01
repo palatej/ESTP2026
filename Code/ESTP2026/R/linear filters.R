@@ -11,7 +11,7 @@ sc<-filter(q, c, sides = 1)
 matplot(cbind(q,sc), type='l')
 
 
-# Differencing b(-1) = -1; b(0) = 0
+# First difference :  b(-1) = -1; b(0) = 1
 
 fr_del<-function(w){
     return (1-complex(real=cos(-w), imaginary = sin(-w)))
