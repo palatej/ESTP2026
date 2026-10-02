@@ -38,7 +38,7 @@ sa1=SA1[[idx]]
 sa2<-SA2[[idx]]
 delsa<-sa2$results$final$d11final-sa1$results$final$d11final
 delproc<-delsa-dely
-print(window(dely, start=2018))TSA
+print(window(dely, start=2018))
 print(window(delsa, start=2018))
 print(window(delproc, start=2018))
 

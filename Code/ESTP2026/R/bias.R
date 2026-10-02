@@ -18,7 +18,7 @@ nspec$regarima<-rg1
 spec1<-rjd3x13::set_x11(nspec, "logAdditive", bias = "LEGACY")
 spec2<-rjd3x13::set_x11(nspec, "logAdditive", bias = "RATIO")
 spec3<-rjd3x13::set_x11(nspec, "logAdditive", bias = "SMOOTH")
-spec4<-rjd3x13::set_x11(nspec, "logAdditive", bias = "NA")
+spec4<-rjd3x13::set_x11(nspec, "logAdditive", bias = "NONE")
 
 rslt1<-rjd3x13::x13_fast(s, spec1)
 rslt2<-rjd3x13::x13_fast(s, spec2)
