@@ -10,6 +10,7 @@ spec.ar(dls)
 
 print(rjd3toolkit::seasonality_qs(dls, 12))
 
+
 # H0: the series has no seasonality
 # pvalue = prob[x>T]
 # pvalue nearly 0 -> w reject H0

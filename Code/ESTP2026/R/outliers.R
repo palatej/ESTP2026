@@ -30,5 +30,6 @@ extract_all_outliers<-function(models){
 all<-tramo_outliers(rjd3toolkit::Retail)
 print(all)
 
-err<-lapply(rjd3toolkit::Retail, function(z){rjd3tramoseats::terror(z, nback = 12)})
+err<-lapply(rjd3toolkit::Retail, function(z){rjd3tramoseats::terror(z, nback = 2)})
+
 
