@@ -1,4 +1,9 @@
 # default calendars
+print(rjd3toolkit::td(12, c(2000,1), 60, groups=c(1,2,3,4,5,6,0), contrasts = FALSE))
+print(rjd3toolkit::td(12, c(2000,1), 60, groups=c(1,1,1,2,2,3,0), contrasts = FALSE))
+
+print(rjd3toolkit::td(12, c(2000,1), 60, groups=c(1,1,1,2,2,3,0), contrasts = TRUE))
+
 
 BE <- rjd3toolkit::national_calendar(list(
   rjd3toolkit::fixed_day(7,21),
@@ -28,9 +33,9 @@ print(be_cal)
 #be_calc<-rjd3toolkit::calendar_td(BE, 12, c(2000,1), 600, holiday=7, groups=c(1,1,1,2,2,3,0),
 #                                 contrasts = TRUE)
 
-print(rjd3toolkit::td(12, c(2000,1), 60, groups=c(1,1,1,2,2,3,0), contrasts = FALSE))
 
-print(rjd3toolkit::td(12, c(2000,1), 60, groups=c(1,1,1,2,2,3,0), contrasts = TRUE))
+print(rjd3toolkit::easter_dates(2000, 2050))
 
+plot(rjd3toolkit::easter_variable(12, c(2000,1), 600,duration = 3))
 
 

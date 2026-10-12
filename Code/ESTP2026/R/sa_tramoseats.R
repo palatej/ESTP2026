@@ -18,15 +18,16 @@ ts.plot(ts.union(s,sa_ts), type="l", col=c("gray", "blue"))
 
 summary(rjd3tramoseats::tramoseats_dictionary())
 
+
 # add some "non-standard" output
 
-rslt_ts_ex<-rjd3tramoseats::tramoseats_fast(s, userdefined = c("y_f(67)", "y_ef(67)", "diagnostics.seas-res-evolutive", "diagnostics.seas-res-stable"))
+rslt_ts_ex<-rjd3tramoseats::tramoseats_fast(s, userdefined = c("y_f(167)", "y_ef(167)", "diagnostics.seas-res-evolutive", "diagnostics.seas-res-stable"))
 
 print(rslt_ts_ex$user_defined$`diagnostics.seas-res-evolutive`)
 print(rslt_ts_ex$user_defined$`diagnostics.seas-res-stable`)
 
-f<-rslt_ts_ex$user_defined$`y_f(67`
-ef<-rslt_ts_ex$user_defined$`y_ef(67`
+f<-rslt_ts_ex$user_defined$`y_f(167`
+ef<-rslt_ts_ex$user_defined$`y_ef(167`
 
 ts.plot(ts.union(f,f+ef, f-ef), col=c("red", "gray", "gray"))
 

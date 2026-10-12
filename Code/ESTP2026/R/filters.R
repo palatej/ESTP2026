@@ -6,7 +6,7 @@ henderson<-function(n){
     return(ff)
 }
 
-nh<-121
+nh<-61
 
 ff<-henderson(nh)
 par(mfrow=c(1,2))
@@ -14,7 +14,7 @@ barplot(ff@coefficients, main="weights")
 rjd3filters::plot_gain(ff, main="gain")
 par(mfrow=c(1,1))
 
-lp<-rjd3filters::lp_filter(horizon=(nh-1)/2, degree=1, kernel="biweight", endpoints = "DAF")
+lp<-rjd3filters::lp_filter(horizon=(nh-1)/2, degree=1, kernel="triweight", endpoints = "DAF")
 par(mfrow=c(1,2))
 barplot(lp@sfilter@coefficients, main="weights")
 rjd3filters::plot_gain(lp@sfilter, main="gain")

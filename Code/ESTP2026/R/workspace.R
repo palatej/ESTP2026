@@ -5,6 +5,7 @@ ws<-rjd3workspace::read_workspace(jws)
 # make a copy of the java object
 jws2<-rjd3workspace::jws_make_copy(jws)
 
+
 # change the path to the data to get last vintages
 rjd3providers::set_spreadsheet_paths("Data/New")
 # refresh the copy (data and parameters)
